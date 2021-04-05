@@ -1,4 +1,3 @@
-package com.ibm.pizza;
 
 public class Pizza {
 	double price;

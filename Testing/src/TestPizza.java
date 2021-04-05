@@ -1,4 +1,3 @@
-package com.ibm.pizza;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -21,7 +20,7 @@ public class TestPizza {
 	
 	@Test
 	public void testToppings() {
-		assertEquals(350, pizza.order("M", 3));
+		assertEquals(350, pizza.order("Z", 3));
 	}
 	
 }
