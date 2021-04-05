@@ -14,7 +14,8 @@ public class TestProductShopping {
 //		Product pro3 = new Product(50,"book");
 		//Product pro4 = new Product(22,"Soap");
 		
-		Product pro = new Product("Pen", 100, 4);
+		Product pro = new Product("Pen", 100, 10);
+		Product pro2 = new Product("Pen1", 200, 10);
 		Payment pay = new Payment("101", 200);
 		
 		ShoppingCart sc = new ShoppingCart();
@@ -22,10 +23,10 @@ public class TestProductShopping {
 		
 		try {
 			sc.addProduct(pro);
-			sc.addProduct(pro);
-			sc.addProduct(pro);
-			sc.addProduct(pro);
-			sc.addProduct(pro);
+			sc.addProduct(pro2);
+//			sc.addProduct(pro);
+//			sc.addProduct(pro);
+//			sc.addProduct(pro);
 		} catch (OutOfStockException e) {
 			// TODO Auto-generated catch block
 			e.getStackTrace();

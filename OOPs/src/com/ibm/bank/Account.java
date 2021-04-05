@@ -1,5 +1,7 @@
 package com.ibm.bank;
 
+import java.util.ArrayList;
+
 /**
  * This class represents generalized bank account
  * @author Ankita Yadav
@@ -20,8 +22,10 @@ public abstract class Account implements Banking {
 	
 	private static int autoNo = INIT_ACNT_NO;
 	
-	protected Transaction[] txns;
-	protected int idx;
+//	protected Transaction[] txns;
+//	protected int idx;
+
+	ArrayList<Transaction> txns = new ArrayList<Transaction>(10);
 	
 	//This is default constructor
 	public Account() {
@@ -35,8 +39,9 @@ public abstract class Account implements Banking {
 		this.holder = holder;
 		this.balance = balance;
 		
-		txns = new Transaction[10];
-		txns[idx ++] = new Transaction("OB", balance, balance);
+		txns.add(new Transaction("OB", balance, balance));
+//		txns = new Transaction[10];
+//		txns[idx ++] = new Transaction("OB", balance, balance);
 	}
 	
 	public void summary() {
@@ -47,7 +52,8 @@ public abstract class Account implements Banking {
 	//BL methods
 	public void deposit(double amount){
         balance  += amount;
-        txns[idx++] = new Transaction("CR", amount, balance);
+//        txns[idx++] = new Transaction("CR", amount, balance);
+        txns.add(new Transaction("CR", amount, balance));
         
 	}
 	
@@ -56,8 +62,12 @@ public abstract class Account implements Banking {
 	
 	public void statement() {
 		System.out.println("Statement for A/C: "+ acnNo);
-		for (int i = 0; i<idx; i++)
-			txns[i].print();
+//		for (int i = 0; i<idx; i++)
+//			txns[i].print();
+		
+		for (Transaction t : txns) {
+			t.print();
+		}
 	}
 	
 	

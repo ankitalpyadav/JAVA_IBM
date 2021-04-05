@@ -11,7 +11,8 @@ public class Savings extends Account {
 	
 		if (amount <= (balance - MIN_SAV_BAL)){
 			balance -= amount;
-			txns[idx++] = new Transaction("DR", amount, balance);
+//			txns[idx++] = new Transaction("DR", amount, balance);
+			txns.add(new Transaction("DR", amount, balance));
 		}
 		else 
 			throw new BalanceException("Insufficient Balance");
